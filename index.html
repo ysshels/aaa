@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="weui.css">
+    <link rel="stylesheet" href="exaple.css">
+
+    <script src="bootstrap.js"></script>
+    <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .content {
+            background: #9e183a;
+            margin-top: -2px;
+            padding-bottom: 2px;
+            padding: 30px;
+        }
+
+
+        .pic {
+            width: 120px;
+            height: 120px;
+            margin: 50px auto 30px;
+            padding: 30px;
+            border: 1px #ffffff dashed;
+            border-radius: 5px;
+        }
+
+        .add {
+            margin-left: 6px;
+            margin-bottom: 10px;
+            padding: 20px 40px;
+            width: 41px;
+            height: 41px;
+            background: url("add.png") no-repeat;
+        }
+
+        .pic span {
+            color: #ffffff;
+        }
+
+        .intp {
+            height: 43px;
+            margin-bottom: 30px;
+        }
+
+        .btn-ms {
+            width: 100%;
+            background: #feed4b;
+            color: #c8374e;
+            font-size: 20px;
+        }
+
+        .hdgz {
+            width: 213px;
+            height: 61px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<img src="banner.png" alt="" width="100%">
+<div class="content">
+    <div class="row">
+
+
+        <div class="weui_uploader_bd">
+            <ul class="weui_uploader_files" id="img2">
+
+
+                <li onclick="var delimg=$(this);$.confirm('您确定要删除吗?', '确认删除?', function() {delimg.remove();},function(){$.toast('取消操作', 'cancel');});" class="weui_uploader_file weui_uploader_status" style="background-image:url(undefined)"><div class="weui_uploader_status_content"><i class="weui_icon_cancel"></i></div></li><li onclick="var delimg=$(this);$.confirm('您确定要删除吗?', '确认删除?', function() {delimg.remove();},function(){$.toast('取消操作', 'cancel');});" class="weui_uploader_file weui_uploader_status" style="background-image:url(undefined)"><div class="weui_uploader_status_content"><i class="weui_icon_cancel"></i></div></li><li onclick="var delimg=$(this);$.confirm('您确定要删除吗?', '确认删除?', function() {delimg.remove();},function(){$.toast('取消操作', 'cancel');});" class="weui_uploader_file weui_uploader_status" style="background-image:url(undefined)"><div class="weui_uploader_status_content"><i class="weui_icon_cancel"></i></div></li></ul>
+            <div class="weui_uploader_input_wrp" id="file2">
+                <input class="weui_uploader_input" accept="image/jpg,image/jpeg,image/png,image/gif" id="headimgurl2" multiple="" type="file">
+
+                <input value="undefined" name="files" type="hidden"><input value="undefined" name="files" type="hidden"><input value="undefined" name="files" type="hidden"></div>
+        </div>
+    </div>
+
+    <input type="password" class="form-control intp" placeholder="第二步：填写或复制粘贴购物订单编号">
+    <button class="btn btn-ms ">马上提交</button>
+
+    <div class="hdgz">
+        <a href="#" data-dismiss="modal"><img src="hdgz.png" alt=""> </a>
+        <a href="javascript:;" class="weui-btn weui-btn_default" id="showIOSDialog2">iOS Dialog样式二</a>
+    </div>
+
+</div>
+
+<div id="dialogs">
+
+    <!--BEGIN dialog2-->
+    <div class="js_dialog" id="iosDialog2" style="opacity: 1;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+            </div>
+        </div>
+    </div>
+    <!--END dialog2-->
+    <!--BEGIN dialog3-->
+
+
+</div>
+
+<script src="jweixin-1.0.0.js"></script>
+<script src="weiui.js" ></script>
+<script src="example.js"></script>
+<script type="text/javascript" class="dialog js_show">
+    $(function(){
+        var $iosDialog1 = $('#iosDialog1'),
+            $iosDialog2 = $('#iosDialog2'),
+            $androidDialog1 = $('#androidDialog1'),
+            $androidDialog2 = $('#androidDialog2');
+
+        $('#dialogs').on('click', '.weui-dialog__btn', function(){
+            $(this).parents('.js_dialog').fadeOut(200);
+        });
+
+        $('#showIOSDialog1').on('click', function(){
+            $iosDialog1.fadeIn(200);
+        });
+        $('#showIOSDialog2').on('click', function(){
+            $iosDialog2.fadeIn(200);
+        });
+        $('#showAndroidDialog1').on('click', function(){
+            $androidDialog1.fadeIn(200);
+        });
+        $('#showAndroidDialog2').on('click', function(){
+            $androidDialog2.fadeIn(200);
+        });
+    });</script>
+</body>
+</html>
